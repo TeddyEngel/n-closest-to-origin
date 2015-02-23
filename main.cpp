@@ -84,18 +84,18 @@ int main(int argc, const char * argv[]) {
     points.push_back(new Point2D(3, 1));
     points.push_back(new Point2D(6, 4));
     
-    // Calculate n closest
+    // Display initial points
     std::cout << "Our points:" << std::endl;
     for(auto &point : points)
     {
         std::cout << "(" << point->x << "," << point->y << ")" << std::endl;
     }
     
-    // We sort the points by distance to origin in the closestPoints collection
+    // We sort the points by distance and insert in the closestPoints collection
     std::vector<Point2D*> closestPoints;
     SortByDistanceToOrigin(points, closestPoints);
     
-    // And display the first N elements of the collection
+    // We display the first N elements of the collection
     int n = 5;
     std::cout << "Closest " << n << " points to origin:" << std::endl;
     PrintNElements(closestPoints, n);
